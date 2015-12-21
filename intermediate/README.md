@@ -1,5 +1,5 @@
-# in醫er醡e醖i醓te
-### /?in(t)?r?m?d??t/
+# in路ter路me路di路ate
+### /藢in(t)蓹r藞m膿d膿蓹t/
 *a build tool*
 
  1. Provides a data structure between API specification formats and templating/transformation libraries.
@@ -43,7 +43,7 @@ Currently generates:
 ### &DownArrowBar; installation
 
 ```bash
-    $ npm install intermediate -D
+$ npm install intermediate -D
 ```
 
 ### &lrarr; usage
@@ -51,40 +51,39 @@ Currently generates:
 #### cli
 
 ```bash
-    $ intermediate [options] <filename>
+$ intermediate [options] <filename>
 ```
 #### commonjs (es5)
 
 ```javascript
 
-    var intermediate = require("intermediate");
+ var intermediate = require("intermediate");
 
-    intermediate("specs/api.json", function(err, data){
+ intermediate("specs/api.json", function(err, data){
 
-        if(err){ return err; }
+  if(err){ return err; }
 
-        return someTemplateEngine.render(loadTemplate(), data);
-      }
-    );
+  return someTemplateEngine.render(loadTemplate(), data);
+});
 ```
 #### es2015 modules
 
 ```javascript
 
-    import intermediate from "intermediate"
+import intermediate from "intermediate"
 
-    // Promises
-    intermediate("specs/api.json")
-    .then( data => {
-        var someTemplate = loadTemplate()
-        return someTemplateEngine.render(someTemplate, data)
-    });
+// Promises
+intermediate("specs/api.json")
+ .then( data => {
+   const someTemplate = loadTemplate()
+   return someTemplateEngine.render(someTemplate, data)
+ });
 
-    // ES7
-    const data = await intermediate("specs/api.json")
+ // ES7
+ const data = await intermediate("specs/api.json")
 
-    const someTemplate = loadTemplate()
-    const output = someTemplateEngine.render(someTemplate, data)
+ const someTemplate = loadTemplate()
+ const output = someTemplateEngine.render(someTemplate, data)
 
 ```
 ### &orarr; extend
